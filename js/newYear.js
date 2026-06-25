@@ -27,7 +27,7 @@ var newYear = () => {
             document.querySelector('#newYear .newYear-time').innerHTML = '<span class="happyNewYear">新年快乐</p>';
         } else {
             // 大于0则还未过年
-            document.querySelector('#newYear .title').innerHTML = '距2026年春节还有：'
+            document.querySelector('#newYear .title').innerHTML = '距2027年春节还有：'
 
             // 大于一天则直接渲染天数
             if (second > 86400) {
