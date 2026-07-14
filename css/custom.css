@@ -643,20 +643,28 @@
   transform: translate(-50%, -48px);
 }
 
-/* 主文章卡片半透明 + 毛玻璃效果 */
-#content-inner, .post-card, .article-card {
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(8px);
-}
-
-/* 侧边栏卡片半透明 */
-.card-widget, .aside-card {
-  background: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: blur(8px);
-}
-
 /* 白天模式下，主题默认背景容器加载API图片 */
 html[data-theme="light"] #web_bg {
   background-image: url(https://www.nekopara.uk/pic_api) !important;
   opacity: 1 !important;
+}
+
+/* Win7 毛玻璃 - 主文章区 */
+#content-inner, .post-card {
+  /* 1. 半透明白底：Win7 活动窗口透明度，0.35 最还原，越低越透 */
+  background: rgba(255, 255, 255, 0.15) !important;
+
+  /* 2. 背景模糊：对应 Win7 DWM 默认模糊强度，核心参数 */
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important; /* 兼容 Safari */
+
+  /* 3. 边缘高光：玻璃边缘亮边，Aero 风格的灵魂细节 */
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+
+  /* 4. 顶部内高光+外投影：模拟玻璃厚度和窗口悬浮感 */
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 2px 12px rgba(0, 0, 0, 0.15) !important;
+
+  border-radius: 16px !important; /* Win7 窗口小圆角，不要改大 */
 }
