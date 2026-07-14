@@ -654,3 +654,9 @@
   background: rgba(255, 255, 255, 0.8) !important;
   backdrop-filter: blur(8px);
 }
+
+/* 白天模式下，主题默认背景容器加载API图片 */
+html[data-theme="light"] #web_bg {
+  background-image: url(https://www.nekopara.uk/pic_api) !important;
+  opacity: 1 !important;
+}
